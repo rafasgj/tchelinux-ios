@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */; };
+		536198DF1F47A2DD00D2D2B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DE1F47A2DD00D2D2B0 /* ViewController.swift */; };
+		536198E21F47A2DD00D2D2B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536198E01F47A2DD00D2D2B0 /* Main.storyboard */; };
+		536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */; };
+		536198E71F47A2DD00D2D2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536198E61F47A2DD00D2D2B0 /* Assets.xcassets */; };
+		536198EA1F47A2DD00D2D2B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536198E81F47A2DD00D2D2B0 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		536198D91F47A2DD00D2D2B0 /* Tchelinux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tchelinux.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		536198DE1F47A2DD00D2D2B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		536198E11F47A2DD00D2D2B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		536198E41F47A2DD00D2D2B0 /* Tchelinux.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tchelinux.xcdatamodel; sourceTree = "<group>"; };
+		536198E61F47A2DD00D2D2B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		536198E91F47A2DD00D2D2B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		536198EB1F47A2DD00D2D2B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		536198D61F47A2DD00D2D2B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		536198D01F47A2DD00D2D2B0 = {
+			isa = PBXGroup;
+			children = (
+				536198DB1F47A2DD00D2D2B0 /* Tchelinux */,
+				536198DA1F47A2DD00D2D2B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		536198DA1F47A2DD00D2D2B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				536198D91F47A2DD00D2D2B0 /* Tchelinux.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		536198DB1F47A2DD00D2D2B0 /* Tchelinux */ = {
+			isa = PBXGroup;
+			children = (
+				536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */,
+				536198DE1F47A2DD00D2D2B0 /* ViewController.swift */,
+				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
+				536198E61F47A2DD00D2D2B0 /* Assets.xcassets */,
+				536198E81F47A2DD00D2D2B0 /* LaunchScreen.storyboard */,
+				536198EB1F47A2DD00D2D2B0 /* Info.plist */,
+				536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */,
+			);
+			path = Tchelinux;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		536198D81F47A2DD00D2D2B0 /* Tchelinux */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 536198EE1F47A2DD00D2D2B0 /* Build configuration list for PBXNativeTarget "Tchelinux" */;
+			buildPhases = (
+				536198D51F47A2DD00D2D2B0 /* Sources */,
+				536198D61F47A2DD00D2D2B0 /* Frameworks */,
+				536198D71F47A2DD00D2D2B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tchelinux;
+			productName = Tchelinux;
+			productReference = 536198D91F47A2DD00D2D2B0 /* Tchelinux.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		536198D11F47A2DD00D2D2B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Rafael Jeffman";
+				TargetAttributes = {
+					536198D81F47A2DD00D2D2B0 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 67PX7SHSDS;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 536198D41F47A2DD00D2D2B0 /* Build configuration list for PBXProject "Tchelinux" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 536198D01F47A2DD00D2D2B0;
+			productRefGroup = 536198DA1F47A2DD00D2D2B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				536198D81F47A2DD00D2D2B0 /* Tchelinux */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		536198D71F47A2DD00D2D2B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536198EA1F47A2DD00D2D2B0 /* LaunchScreen.storyboard in Resources */,
+				536198E71F47A2DD00D2D2B0 /* Assets.xcassets in Resources */,
+				536198E21F47A2DD00D2D2B0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		536198D51F47A2DD00D2D2B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				536198DF1F47A2DD00D2D2B0 /* ViewController.swift in Sources */,
+				536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */,
+				536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		536198E01F47A2DD00D2D2B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				536198E11F47A2DD00D2D2B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		536198E81F47A2DD00D2D2B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				536198E91F47A2DD00D2D2B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		536198EC1F47A2DD00D2D2B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		536198ED1F47A2DD00D2D2B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		536198EF1F47A2DD00D2D2B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67PX7SHSDS;
+				INFOPLIST_FILE = Tchelinux/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaeljeffman.tchelinux.Tchelinux;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		536198F01F47A2DD00D2D2B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67PX7SHSDS;
+				INFOPLIST_FILE = Tchelinux/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rafaeljeffman.tchelinux.Tchelinux;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		536198D41F47A2DD00D2D2B0 /* Build configuration list for PBXProject "Tchelinux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				536198EC1F47A2DD00D2D2B0 /* Debug */,
+				536198ED1F47A2DD00D2D2B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		536198EE1F47A2DD00D2D2B0 /* Build configuration list for PBXNativeTarget "Tchelinux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				536198EF1F47A2DD00D2D2B0 /* Debug */,
+				536198F01F47A2DD00D2D2B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				536198E41F47A2DD00D2D2B0 /* Tchelinux.xcdatamodel */,
+			);
+			currentVersion = 536198E41F47A2DD00D2D2B0 /* Tchelinux.xcdatamodel */;
+			path = Tchelinux.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 536198D11F47A2DD00D2D2B0 /* Project object */;
+}
