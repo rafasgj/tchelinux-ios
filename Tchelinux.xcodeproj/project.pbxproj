@@ -56,15 +56,47 @@
 		536198DB1F47A2DD00D2D2B0 /* Tchelinux */ = {
 			isa = PBXGroup;
 			children = (
-				536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */,
-				536198DE1F47A2DD00D2D2B0 /* ViewController.swift */,
-				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
-				536198E61F47A2DD00D2D2B0 /* Assets.xcassets */,
-				536198E81F47A2DD00D2D2B0 /* LaunchScreen.storyboard */,
-				536198EB1F47A2DD00D2D2B0 /* Info.plist */,
-				536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */,
+				536198F41F47B24300D2D2B0 /* Main */,
+				536198F31F47A44200D2D2B0 /* SupportFiles */,
+				536198F21F47A3FA00D2D2B0 /* Splash */,
+				536198F11F47A3E800D2D2B0 /* CoreData */,
 			);
 			path = Tchelinux;
+			sourceTree = "<group>";
+		};
+		536198F11F47A3E800D2D2B0 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		536198F21F47A3FA00D2D2B0 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				536198E81F47A2DD00D2D2B0 /* LaunchScreen.storyboard */,
+			);
+			name = Splash;
+			sourceTree = "<group>";
+		};
+		536198F31F47A44200D2D2B0 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */,
+				536198E61F47A2DD00D2D2B0 /* Assets.xcassets */,
+				536198EB1F47A2DD00D2D2B0 /* Info.plist */,
+			);
+			name = SupportFiles;
+			sourceTree = "<group>";
+		};
+		536198F41F47B24300D2D2B0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
+				536198DE1F47A2DD00D2D2B0 /* ViewController.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
