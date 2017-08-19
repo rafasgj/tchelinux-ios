@@ -31,20 +31,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C31-KB-Ppc">
-                                <rect key="frame" x="122" y="525.5" width="78" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bMz-sx-kFP" firstAttribute="top" secondItem="JxO-FS-hv8" secondAttribute="bottom" constant="41" id="AxV-8D-Ljt"/>
                             <constraint firstItem="bMz-sx-kFP" firstAttribute="width" secondItem="JxO-FS-hv8" secondAttribute="width" id="BjO-P1-NSS"/>
                             <constraint firstItem="JxO-FS-hv8" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="LPj-8G-4Fv"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="C31-KB-Ppc" secondAttribute="bottom" constant="20" id="XCc-Dy-DKe"/>
-                            <constraint firstItem="C31-KB-Ppc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aUe-EF-lOz"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JxO-FS-hv8" secondAttribute="leading" id="eT2-7e-VB8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JxO-FS-hv8" secondAttribute="trailing" id="f04-mF-H26"/>
                             <constraint firstItem="bMz-sx-kFP" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hvY-13-JEt"/>

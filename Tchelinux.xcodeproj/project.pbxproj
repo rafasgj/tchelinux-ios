@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */; };
-		536198DF1F47A2DD00D2D2B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DE1F47A2DD00D2D2B0 /* ViewController.swift */; };
+		536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */; };
 		536198E21F47A2DD00D2D2B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536198E01F47A2DD00D2D2B0 /* Main.storyboard */; };
 		536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */; };
 		536198E71F47A2DD00D2D2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536198E61F47A2DD00D2D2B0 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		536198D91F47A2DD00D2D2B0 /* Tchelinux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tchelinux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		536198DE1F47A2DD00D2D2B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		536198E11F47A2DD00D2D2B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		536198E41F47A2DD00D2D2B0 /* Tchelinux.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tchelinux.xcdatamodel; sourceTree = "<group>"; };
 		536198E61F47A2DD00D2D2B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
-				536198DE1F47A2DD00D2D2B0 /* ViewController.swift */,
+				536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				536198DF1F47A2DD00D2D2B0 /* ViewController.swift in Sources */,
+				536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */,
 				536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */,
 				536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */,
 			);
