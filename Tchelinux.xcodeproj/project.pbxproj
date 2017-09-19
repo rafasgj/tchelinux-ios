@@ -13,31 +13,6 @@
 		536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */; };
 		536198E71F47A2DD00D2D2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536198E61F47A2DD00D2D2B0 /* Assets.xcassets */; };
 		536198EA1F47A2DD00D2D2B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536198E81F47A2DD00D2D2B0 /* LaunchScreen.storyboard */; };
-		53A7F7BA1F718D5100C74DD4 /* Sponsor+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A21F718D5100C74DD4 /* Sponsor+CoreDataClass.swift */; };
-		53A7F7BB1F718D5100C74DD4 /* Sponsor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A31F718D5100C74DD4 /* Sponsor+CoreDataProperties.swift */; };
-		53A7F7BC1F718D5100C74DD4 /* Lecture+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A41F718D5100C74DD4 /* Lecture+CoreDataClass.swift */; };
-		53A7F7BD1F718D5100C74DD4 /* Lecture+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A51F718D5100C74DD4 /* Lecture+CoreDataProperties.swift */; };
-		53A7F7BE1F718D5100C74DD4 /* CallForPapers+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A61F718D5100C74DD4 /* CallForPapers+CoreDataClass.swift */; };
-		53A7F7BF1F718D5100C74DD4 /* CallForPapers+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A71F718D5100C74DD4 /* CallForPapers+CoreDataProperties.swift */; };
-		53A7F7C01F718D5100C74DD4 /* Author+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A81F718D5100C74DD4 /* Author+CoreDataClass.swift */; };
-		53A7F7C11F718D5100C74DD4 /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7A91F718D5100C74DD4 /* Author+CoreDataProperties.swift */; };
-		53A7F7C21F718D5100C74DD4 /* Room+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7AA1F718D5100C74DD4 /* Room+CoreDataClass.swift */; };
-		53A7F7C31F718D5100C74DD4 /* Room+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7AB1F718D5100C74DD4 /* Room+CoreDataProperties.swift */; };
-		53A7F7C41F718D5100C74DD4 /* Contact+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7AC1F718D5100C74DD4 /* Contact+CoreDataClass.swift */; };
-		53A7F7C51F718D5100C74DD4 /* Contact+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7AD1F718D5100C74DD4 /* Contact+CoreDataProperties.swift */; };
-		53A7F7C61F718D5100C74DD4 /* Support+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7AE1F718D5100C74DD4 /* Support+CoreDataClass.swift */; };
-		53A7F7C71F718D5100C74DD4 /* Support+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7AF1F718D5100C74DD4 /* Support+CoreDataProperties.swift */; };
-		53A7F7C81F718D5100C74DD4 /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B01F718D5100C74DD4 /* Event+CoreDataClass.swift */; };
-		53A7F7C91F718D5100C74DD4 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B11F718D5100C74DD4 /* Event+CoreDataProperties.swift */; };
-		53A7F7CA1F718D5100C74DD4 /* Enrollment+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B21F718D5100C74DD4 /* Enrollment+CoreDataClass.swift */; };
-		53A7F7CB1F718D5100C74DD4 /* Enrollment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B31F718D5100C74DD4 /* Enrollment+CoreDataProperties.swift */; };
-		53A7F7CC1F718D5100C74DD4 /* EndingPanel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B41F718D5100C74DD4 /* EndingPanel+CoreDataClass.swift */; };
-		53A7F7CD1F718D5100C74DD4 /* EndingPanel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B51F718D5100C74DD4 /* EndingPanel+CoreDataProperties.swift */; };
-		53A7F7CE1F718D5100C74DD4 /* Institution+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B61F718D5100C74DD4 /* Institution+CoreDataClass.swift */; };
-		53A7F7CF1F718D5100C74DD4 /* Institution+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B71F718D5100C74DD4 /* Institution+CoreDataProperties.swift */; };
-		53A7F7D01F718D5100C74DD4 /* Result+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B81F718D5100C74DD4 /* Result+CoreDataClass.swift */; };
-		53A7F7D11F718D5100C74DD4 /* Result+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A7F7B91F718D5100C74DD4 /* Result+CoreDataProperties.swift */; };
-		53C29E8A1F7047C100133E23 /* PastEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C29E891F7047C100133E23 /* PastEventViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,31 +24,6 @@
 		536198E61F47A2DD00D2D2B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		536198E91F47A2DD00D2D2B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		536198EB1F47A2DD00D2D2B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53A7F7A21F718D5100C74DD4 /* Sponsor+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sponsor+CoreDataClass.swift"; path = "CoreDataClasses/Sponsor+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7A31F718D5100C74DD4 /* Sponsor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sponsor+CoreDataProperties.swift"; path = "CoreDataClasses/Sponsor+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7A41F718D5100C74DD4 /* Lecture+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lecture+CoreDataClass.swift"; path = "CoreDataClasses/Lecture+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7A51F718D5100C74DD4 /* Lecture+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Lecture+CoreDataProperties.swift"; path = "CoreDataClasses/Lecture+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7A61F718D5100C74DD4 /* CallForPapers+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CallForPapers+CoreDataClass.swift"; path = "CoreDataClasses/CallForPapers+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7A71F718D5100C74DD4 /* CallForPapers+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CallForPapers+CoreDataProperties.swift"; path = "CoreDataClasses/CallForPapers+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7A81F718D5100C74DD4 /* Author+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Author+CoreDataClass.swift"; path = "CoreDataClasses/Author+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7A91F718D5100C74DD4 /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Author+CoreDataProperties.swift"; path = "CoreDataClasses/Author+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7AA1F718D5100C74DD4 /* Room+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Room+CoreDataClass.swift"; path = "CoreDataClasses/Room+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7AB1F718D5100C74DD4 /* Room+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Room+CoreDataProperties.swift"; path = "CoreDataClasses/Room+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7AC1F718D5100C74DD4 /* Contact+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataClass.swift"; path = "CoreDataClasses/Contact+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7AD1F718D5100C74DD4 /* Contact+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Contact+CoreDataProperties.swift"; path = "CoreDataClasses/Contact+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7AE1F718D5100C74DD4 /* Support+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Support+CoreDataClass.swift"; path = "CoreDataClasses/Support+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7AF1F718D5100C74DD4 /* Support+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Support+CoreDataProperties.swift"; path = "CoreDataClasses/Support+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7B01F718D5100C74DD4 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataClass.swift"; path = "CoreDataClasses/Event+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7B11F718D5100C74DD4 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Event+CoreDataProperties.swift"; path = "CoreDataClasses/Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7B21F718D5100C74DD4 /* Enrollment+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Enrollment+CoreDataClass.swift"; path = "CoreDataClasses/Enrollment+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7B31F718D5100C74DD4 /* Enrollment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Enrollment+CoreDataProperties.swift"; path = "CoreDataClasses/Enrollment+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7B41F718D5100C74DD4 /* EndingPanel+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EndingPanel+CoreDataClass.swift"; path = "CoreDataClasses/EndingPanel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7B51F718D5100C74DD4 /* EndingPanel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "EndingPanel+CoreDataProperties.swift"; path = "CoreDataClasses/EndingPanel+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7B61F718D5100C74DD4 /* Institution+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Institution+CoreDataClass.swift"; path = "CoreDataClasses/Institution+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7B71F718D5100C74DD4 /* Institution+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Institution+CoreDataProperties.swift"; path = "CoreDataClasses/Institution+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53A7F7B81F718D5100C74DD4 /* Result+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Result+CoreDataClass.swift"; path = "CoreDataClasses/Result+CoreDataClass.swift"; sourceTree = "<group>"; };
-		53A7F7B91F718D5100C74DD4 /* Result+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Result+CoreDataProperties.swift"; path = "CoreDataClasses/Result+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		53C29E891F7047C100133E23 /* PastEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastEventViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,30 +67,6 @@
 		536198F11F47A3E800D2D2B0 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				53A7F7A21F718D5100C74DD4 /* Sponsor+CoreDataClass.swift */,
-				53A7F7A31F718D5100C74DD4 /* Sponsor+CoreDataProperties.swift */,
-				53A7F7A41F718D5100C74DD4 /* Lecture+CoreDataClass.swift */,
-				53A7F7A51F718D5100C74DD4 /* Lecture+CoreDataProperties.swift */,
-				53A7F7A61F718D5100C74DD4 /* CallForPapers+CoreDataClass.swift */,
-				53A7F7A71F718D5100C74DD4 /* CallForPapers+CoreDataProperties.swift */,
-				53A7F7A81F718D5100C74DD4 /* Author+CoreDataClass.swift */,
-				53A7F7A91F718D5100C74DD4 /* Author+CoreDataProperties.swift */,
-				53A7F7AA1F718D5100C74DD4 /* Room+CoreDataClass.swift */,
-				53A7F7AB1F718D5100C74DD4 /* Room+CoreDataProperties.swift */,
-				53A7F7AC1F718D5100C74DD4 /* Contact+CoreDataClass.swift */,
-				53A7F7AD1F718D5100C74DD4 /* Contact+CoreDataProperties.swift */,
-				53A7F7AE1F718D5100C74DD4 /* Support+CoreDataClass.swift */,
-				53A7F7AF1F718D5100C74DD4 /* Support+CoreDataProperties.swift */,
-				53A7F7B01F718D5100C74DD4 /* Event+CoreDataClass.swift */,
-				53A7F7B11F718D5100C74DD4 /* Event+CoreDataProperties.swift */,
-				53A7F7B21F718D5100C74DD4 /* Enrollment+CoreDataClass.swift */,
-				53A7F7B31F718D5100C74DD4 /* Enrollment+CoreDataProperties.swift */,
-				53A7F7B41F718D5100C74DD4 /* EndingPanel+CoreDataClass.swift */,
-				53A7F7B51F718D5100C74DD4 /* EndingPanel+CoreDataProperties.swift */,
-				53A7F7B61F718D5100C74DD4 /* Institution+CoreDataClass.swift */,
-				53A7F7B71F718D5100C74DD4 /* Institution+CoreDataProperties.swift */,
-				53A7F7B81F718D5100C74DD4 /* Result+CoreDataClass.swift */,
-				53A7F7B91F718D5100C74DD4 /* Result+CoreDataProperties.swift */,
 				536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -169,7 +95,6 @@
 			children = (
 				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
 				536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */,
-				53C29E891F7047C100133E23 /* PastEventViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -247,34 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A7F7CB1F718D5100C74DD4 /* Enrollment+CoreDataProperties.swift in Sources */,
-				53C29E8A1F7047C100133E23 /* PastEventViewController.swift in Sources */,
-				53A7F7CA1F718D5100C74DD4 /* Enrollment+CoreDataClass.swift in Sources */,
-				53A7F7CC1F718D5100C74DD4 /* EndingPanel+CoreDataClass.swift in Sources */,
 				536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */,
-				53A7F7C31F718D5100C74DD4 /* Room+CoreDataProperties.swift in Sources */,
-				53A7F7BD1F718D5100C74DD4 /* Lecture+CoreDataProperties.swift in Sources */,
-				53A7F7C91F718D5100C74DD4 /* Event+CoreDataProperties.swift in Sources */,
 				536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */,
-				53A7F7C51F718D5100C74DD4 /* Contact+CoreDataProperties.swift in Sources */,
-				53A7F7BB1F718D5100C74DD4 /* Sponsor+CoreDataProperties.swift in Sources */,
-				53A7F7D01F718D5100C74DD4 /* Result+CoreDataClass.swift in Sources */,
-				53A7F7C11F718D5100C74DD4 /* Author+CoreDataProperties.swift in Sources */,
-				53A7F7BF1F718D5100C74DD4 /* CallForPapers+CoreDataProperties.swift in Sources */,
-				53A7F7C71F718D5100C74DD4 /* Support+CoreDataProperties.swift in Sources */,
-				53A7F7BC1F718D5100C74DD4 /* Lecture+CoreDataClass.swift in Sources */,
-				53A7F7BE1F718D5100C74DD4 /* CallForPapers+CoreDataClass.swift in Sources */,
-				53A7F7D11F718D5100C74DD4 /* Result+CoreDataProperties.swift in Sources */,
-				53A7F7CE1F718D5100C74DD4 /* Institution+CoreDataClass.swift in Sources */,
-				53A7F7C01F718D5100C74DD4 /* Author+CoreDataClass.swift in Sources */,
-				53A7F7BA1F718D5100C74DD4 /* Sponsor+CoreDataClass.swift in Sources */,
-				53A7F7C41F718D5100C74DD4 /* Contact+CoreDataClass.swift in Sources */,
-				53A7F7CD1F718D5100C74DD4 /* EndingPanel+CoreDataProperties.swift in Sources */,
-				53A7F7C81F718D5100C74DD4 /* Event+CoreDataClass.swift in Sources */,
-				53A7F7C61F718D5100C74DD4 /* Support+CoreDataClass.swift in Sources */,
 				536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */,
-				53A7F7CF1F718D5100C74DD4 /* Institution+CoreDataProperties.swift in Sources */,
-				53A7F7C21F718D5100C74DD4 /* Room+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
