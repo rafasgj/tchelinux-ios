@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "Detalhes do Evento"; ObjectID = "4Hm-VE-9YF"; */
+"4Hm-VE-9YF.text" = "Detalhes do Evento";
+
+/* Class = "UITabBarItem"; title = "Agenda"; ObjectID = "7Rg-YL-0zJ"; */
+"7Rg-YL-0zJ.title" = "Agenda";
+
+/* Class = "UILabel"; text = "Detalhes do Evento"; ObjectID = "9cj-8M-xvJ"; */
+"9cj-8M-xvJ.text" = "Detalhes do Evento";
+
+/* Class = "UILabel"; text = "Pelotas"; ObjectID = "9hK-8A-4rd"; */
+"9hK-8A-4rd.text" = "Pelotas";
+
+/* Class = "UITabBarItem"; title = "Resultados"; ObjectID = "GmE-0t-b24"; */
+"GmE-0t-b24.title" = "Resultados";
+
+/* Class = "UILabel"; text = "Novo Hamburgo"; ObjectID = "Ke1-sx-oSW"; */
+"Ke1-sx-oSW.text" = "Novo Hamburgo";
+
+/* Class = "UILabel"; text = "Tchelinux"; ObjectID = "Ln5-Zd-PAo"; */
+"Ln5-Zd-PAo.text" = "Tchelinux";
+
+/* Class = "UINavigationItem"; title = "Resultados"; ObjectID = "Mt8-BZ-pwN"; */
+"Mt8-BZ-pwN.title" = "Resultados";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "P3C-ek-G0h"; */
+"P3C-ek-G0h.text" = "Subtitle";
+
+/* Class = "UINavigationItem"; title = "Agenda"; ObjectID = "Rbw-vL-sPC"; */
+"Rbw-vL-sPC.title" = "Agenda";
+
+/* Class = "UILabel"; text = "data"; ObjectID = "WYb-0P-xke"; */
+"WYb-0P-xke.text" = "data";
+
+/* Class = "UILabel"; text = "data"; ObjectID = "XBX-vk-mpo"; */
+"XBX-vk-mpo.text" = "data";
+
+/* Class = "UITabBarItem"; title = "Agenda"; ObjectID = "Zji-xW-I7N"; */
+"Zji-xW-I7N.title" = "Agenda";
+
+/* Class = "UILabel"; text = "Santa Cruz"; ObjectID = "a29-Md-UZd"; */
+"a29-Md-UZd.text" = "Santa Cruz";
+
+/* Class = "UITabBarItem"; title = "Sobre"; ObjectID = "cyS-o6-UfH"; */
+"cyS-o6-UfH.title" = "Sobre";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "iud-FA-dfG"; */
+"iud-FA-dfG.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "Resultados"; ObjectID = "lwt-nX-FGY"; */
+"lwt-nX-FGY.title" = "Resultados";
+
+/* Class = "UILabel"; text = "O TcheLinux é um grupo de voluntários que trabalha na divulgação do Software Livre no estado do Rio Grande do Sul, através da organização e realização de eventos gratuitos para estudantes, profissionais da área de Tecnologia da Informação e demais interessados.\n\nO grupo promove também a caridade, uma vez que participantes de seus eventos são encorajados a doarem alimentos não-perecíveis para serem encaminhados à instituções de caridade."; ObjectID = "qsc-O8-4nz"; */
+"qsc-O8-4nz.text" = "O TcheLinux é um grupo de voluntários que trabalha na divulgação do Software Livre no estado do Rio Grande do Sul, através da organização e realização de eventos gratuitos para estudantes, profissionais da área de Tecnologia da Informação e demais interessados.\n\nO grupo promove também a caridade, uma vez que participantes de seus eventos são encorajados a doarem alimentos não-perecíveis para serem encaminhados à instituções de caridade.";
+
+/* Class = "UILabel"; text = "data"; ObjectID = "tuP-wD-Bjb"; */
+"tuP-wD-Bjb.text" = "data";

@@ -11,11 +11,17 @@ import Foundation
 
 class MainViewController: UITabBarController {
 
-    // MARK: Model
-    struct Event {
-        var id: String
-        var city: String
-        var date: Date
+    // MARK: Model    
+    var events = [Event]() {
+        didSet {
+            print("Changing EVENT")
+            if let vc = nextVC as? EventTableViewController {
+                print("About to change events on view controller.")
+                vc.events = events
+            } else {
+                print("It's another VC...")
+            }
+        }
     }
     
     // MARK: Startup
@@ -29,7 +35,7 @@ class MainViewController: UITabBarController {
             self?.load_events(from: base_url, file: list_of_events)
         }
     }
-
+    
     //MARK: JSON Objects
     
     private func load_events(from: String, file: String) {
@@ -46,19 +52,26 @@ class MainViewController: UITabBarController {
         func process(_ evt: [String:Any]?, id: String) {
             if let event = evt {
                 let eventData: Event
+                let institute: Institution
+                
+                if let institution: [String:Any] = event["institution"] as? [String : Any],
+                    let name = institution["long_name"] as? String,
+                    let address = institution["address"] as? String,
+                    let url = institution["url"] as? String
+                {
+                    institute = Institution(name: name, address: address, url: url)
+                } else {
+                    return
+                }
 
                 if let city = event["city"] as? String,
-                    let date = Date.fromString(event["date"] as? String) {
-                    eventData = Event(id:id, city:city,date:date)
-                    print("Cidade: \(eventData.city)")
-                    print("Data: \(eventData.date)")
+                    let date = Date.fromString(event["date"] as? String)
+                {
+                    eventData = Event(id: id, city: city, date: date, institution: institute)
+                } else {
+                    return
                 }
-                
-                let institution: [String:Any] = event["callForPapers"] as! [String : Any]
-                print("Instituição: \(institution["long_name"] ?? "error")")
-                print("Endereço: \(institution["address"] ?? "error")")
-                print("URL: \(institution["url"] ?? "error")")
-                
+                /*
                 let callForPapers: [String:Any] = event["callForPapers"] as! [String : Any]
                 print("Chamada de Trabalhos: \(callForPapers["deadline"] ?? "error")")
                 print("Notificação: \(callForPapers["notificação"] ?? "error")")
@@ -66,6 +79,10 @@ class MainViewController: UITabBarController {
                 let enrollment: [String:Any] = event["enrollment"] as! [String : Any]
                 print("Abertura das Inscrições: \(enrollment["deadline"] ?? "error")")
                 print("Inscrições: \((enrollment["closed"] as? Bool)! ? "fechadas" : "abertas")")
+                 */
+                
+                print("Added \(eventData.id)")
+                DispatchQueue.main.async { [weak self] in self?.events.append(eventData) }
             } else {
                 print("Failed to load event \(id)")
                 return
@@ -86,7 +103,6 @@ class MainViewController: UITabBarController {
             }
         }
     }
-    
 }
 
 extension Foundation.Date {
@@ -98,5 +114,15 @@ extension Foundation.Date {
             return result
         }
         return nil
+    }
+}
+
+extension UITabBarController {
+    var nextVC: UIViewController? {
+        if let nvc = selectedViewController as? UINavigationController {
+            return nvc.visibleViewController
+        } else {
+            return selectedViewController
+        }
     }
 }
