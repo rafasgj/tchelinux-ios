@@ -1,60 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Author" representedClassName="Author" syncable="YES">
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="resume" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="endingHost" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EndingPanel" inverseName="host" inverseEntity="EndingPanel" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="authors" inverseEntity="Lecture" syncable="YES"/>
-        <relationship name="openingHost" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="openingHost" inverseEntity="Event" syncable="YES"/>
-    </entity>
-    <entity name="CallForPapers" representedClassName="CallForPapers" syncable="YES">
-        <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="notification" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="callForPapers" inverseEntity="Event" syncable="YES"/>
-    </entity>
-    <entity name="Contact" representedClassName="Contact" syncable="YES">
-        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="asSponsor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Sponsor" inverseName="contact" inverseEntity="Sponsor" syncable="YES"/>
-        <relationship name="asSupport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Support" inverseName="contact" inverseEntity="Support" syncable="YES"/>
-    </entity>
-    <entity name="EndingPanel" representedClassName="EndingPanel" syncable="YES">
-        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="evento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="endingPanel" inverseEntity="Event" syncable="YES"/>
-        <relationship name="host" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="endingHost" inverseEntity="Author" syncable="YES"/>
-    </entity>
-    <entity name="Enrollment" representedClassName="Enrollment" syncable="YES">
-        <attribute name="availability" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="closed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="enrollment" inverseEntity="Event" syncable="YES"/>
-    </entity>
-    <entity name="Event" representedClassName=".Event" syncable="YES">
+    <entity name="Event" representedClassName=".Event" syncable="YES" codeGenerationType="category">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="coffe" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="codename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="fingerprint" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lunch" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="opening" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="rval" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="updated" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="callForPapers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CallForPapers" inverseName="event" inverseEntity="CallForPapers" syncable="YES"/>
-        <relationship name="endingPanel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EndingPanel" inverseName="evento" inverseEntity="EndingPanel" syncable="YES"/>
-        <relationship name="enrollment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Enrollment" inverseName="event" inverseEntity="Enrollment" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="institution" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institution" inverseName="event" inverseEntity="Institution" syncable="YES"/>
-        <relationship name="openingHost" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="openingHost" inverseEntity="Author" syncable="YES"/>
-        <relationship name="result" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Result" inverseName="event" inverseEntity="Result" syncable="YES"/>
-        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="event" inverseEntity="Room" syncable="YES"/>
-        <relationship name="sponsors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sponsor" inverseName="event" inverseEntity="Sponsor" syncable="YES"/>
-        <relationship name="support" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Support" inverseName="event" inverseEntity="Support" syncable="YES"/>
     </entity>
-    <entity name="Institution" representedClassName=".Institution" syncable="YES">
+    <entity name="Institution" representedClassName=".Institution" syncable="YES" codeGenerationType="category">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
@@ -63,53 +16,8 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="event" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="institution" inverseEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="Lecture" representedClassName="Lecture" syncable="YES">
-        <attribute name="abstract" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="keywords" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="level" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="authors" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Author" inverseName="lectures" inverseEntity="Author" syncable="YES"/>
-        <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="lectures" inverseEntity="Room" syncable="YES"/>
-    </entity>
-    <entity name="Result" representedClassName="Result" syncable="YES">
-        <attribute name="donations" optional="YES" attributeType="Float" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="participants" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="result" inverseEntity="Event" syncable="YES"/>
-    </entity>
-    <entity name="Room" representedClassName="Room" syncable="YES">
-        <attribute name="room" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="rooms" inverseEntity="Event" syncable="YES"/>
-        <relationship name="lectures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lecture" inverseName="room" inverseEntity="Lecture" syncable="YES"/>
-    </entity>
-    <entity name="Sponsor" representedClassName="Sponsor" syncable="YES">
-        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="long_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="short_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="asSponsor" inverseEntity="Contact" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="sponsors" inverseEntity="Event" syncable="YES"/>
-    </entity>
-    <entity name="Support" representedClassName="Support" syncable="YES">
-        <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="long_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="short_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="contact" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contact" inverseName="asSupport" inverseEntity="Contact" syncable="YES"/>
-        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="support" inverseEntity="Event" syncable="YES"/>
-    </entity>
     <elements>
-        <element name="Author" positionX="133" positionY="-36" width="128" height="133"/>
-        <element name="CallForPapers" positionX="-794" positionY="-198" width="128" height="103"/>
-        <element name="Contact" positionX="-666" positionY="392" width="128" height="103"/>
-        <element name="EndingPanel" positionX="-99" positionY="-265" width="128" height="103"/>
-        <element name="Enrollment" positionX="-495" positionY="-277" width="128" height="133"/>
-        <element name="Event" positionX="-479" positionY="-58" width="128" height="313"/>
-        <element name="Institution" positionX="-63" positionY="-130" width="128" height="148"/>
-        <element name="Lecture" positionX="63" positionY="200" width="128" height="133"/>
-        <element name="Result" positionX="-776" positionY="65" width="128" height="88"/>
-        <element name="Room" positionX="-164" positionY="230" width="128" height="103"/>
-        <element name="Sponsor" positionX="-738" positionY="179" width="128" height="133"/>
-        <element name="Support" positionX="-452" positionY="371" width="128" height="133"/>
+        <element name="Event" positionX="-389" positionY="-58" width="128" height="118"/>
+        <element name="Institution" positionX="-81" positionY="-54" width="128" height="150"/>
     </elements>
 </model>

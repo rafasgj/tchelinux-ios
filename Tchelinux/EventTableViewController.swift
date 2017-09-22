@@ -7,26 +7,26 @@
 //
 
 import UIKit
+import CoreData
 
-class EventTableViewController: UITableViewController {
+class EventTableViewController: CoreDataTableViewController {
 
-    var events: [Event]?
-    {
-        didSet { eventList?.reloadData() }
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
-    var filter: (Event) -> Bool = { e in return true }
-    {
-        didSet { eventList?.reloadData() }
-    }
-    
-    var order: (Event,Event) -> Bool = { a,b in return true }
-    {
-        didSet { eventList?.reloadData() }
-    }
-    
-    private var orderedList: [Event]? {
-        return events?.filter(filter).sorted(by:order)
+    internal var fetchedResultsController: NSFetchedResultsController<Event>? {
+        didSet {
+            do {
+                if let resultsController = fetchedResultsController {
+                    resultsController.delegate = self
+                    try resultsController.performFetch()
+                    tableView.reloadData()
+                }
+            } catch let error {
+                print("PerformFetch failed: \(error)")
+            }
+        }
     }
     
     @IBOutlet var eventList: UITableView!
@@ -35,91 +35,52 @@ class EventTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print("Will apear \((self.navigationItem.title ?? "WHO KNOWS?"))")
+        //print("Will apear \((self.navigationItem.title ?? "WHO KNOWS?"))")
         
+        requestFetchedResultsController()
+    }
+    
+    // MARK: - CoreDataTableViewController FetchedResultsController setup
+    
+    private func requestFetchedResultsController() {
+        let request = NSFetchRequest<Event>(entityName: "Event")
+        var ascending = true
         if let title = self.navigationItem.title {
             switch title {
             case "Agenda":
-                filter = { $0.date >= Date() }
-                order = {$0.date < $1.date }
+                request.predicate = NSPredicate(format: "date >= %@", Date() as NSDate)
             case "Resultados":
-                filter = { $0.date < Date() }
-                order = {$0.date > $1.date }
+                request.predicate = NSPredicate(format: "date < %@", Date() as NSDate)
+                ascending = false
             default: break
             }
         }
-    }
-    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        request.sortDescriptors = [ NSSortDescriptor(key: "date", ascending: ascending) ]
+        
+        fetchedResultsController = getFetchedResultsController(for: request)
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events?.filter(filter).count ?? 0
-    }
+    // MARK: - UITableView data source
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
         
-        if let list = orderedList {
-            let event = list[indexPath.row]
+        if let event = fetchedResultsController?.object(at: indexPath) {
             cell.textLabel?.text = event.city
-            cell.detailTextLabel?.text = event.date.inPortuguese
+            cell.detailTextLabel?.text = (event.date! as Date).inPortuguese
         }
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let list = orderedList, let vc = segue.destination as? EventDetailViewController,
-            let e = eventList?.indexPathForSelectedRow?.row
+        if let vc = segue.destination as? EventDetailViewController,
+            let e = fetchedResultsController?.object(at: (eventList?.indexPathForSelectedRow!)!)
         {
-            print("The list:")
-            for item in list {
-                print(item.city)
-            }
-            print("The index: \(e)")
-            print("Segue with \(list[e].city)")
-            vc.event = list[e]
+            //print("Segue with \(e.city ?? "unknown city")")
+            vc.event = e
         }
     }
 

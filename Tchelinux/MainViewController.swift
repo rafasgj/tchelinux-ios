@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class MainViewController: UITabBarController {
 
@@ -26,8 +27,7 @@ class MainViewController: UITabBarController {
     }
 
     private func updateUI() {
-        if let tableVC = (self.selectedViewController as? UINavigationController)?.visibleViewController as? EventTableViewController {
-            tableVC.events = events
+        if let tableVC = nextVC as? EventTableViewController {
             tableVC.eventList?.reloadData()
         }
     }
@@ -49,28 +49,28 @@ class MainViewController: UITabBarController {
             return nil
         }
         
-        func process(_ evt: [String:Any]?, id: String) {
-            if let event = evt {
-                let eventData: Event
-                let institute: Institution
-                
-                if let institution: [String:Any] = event["institution"] as? [String : Any],
-                    let name = institution["long_name"] as? String,
-                    let address = institution["address"] as? String,
-                    let url = institution["url"] as? String
-                {
-                    institute = Institution(name: name, address: address, url: url)
-                } else {
+        func process(_ evt: [String:Any]?, evtinfo: (id:String, updated:Date)) {
+            if let eventData = evt,
+                let context = AppDelegate.persistentContainer?.viewContext,
+                let eventManagedObject = try? Event.retrieveOrCreate(event: evtinfo.id, context: context),
+                let event = eventManagedObject
+            {
+                if let date: NSDate = event.lastUpdate, date <= (evtinfo.updated as NSDate) {
+                    //print("Ignoring event \(evtinfo.id) since it exists and was not updated since \(evtinfo.updated)")
                     return
                 }
+                //print("Creating/changing \(evtinfo.id)")
 
-                if let city = event["city"] as? String,
-                    let date = Date.fromString(event["date"] as? String)
+                event.updateWithJSONData(data:eventData, updated: evtinfo.updated)
+
+                if let institute: [String:Any] = eventData["institution"] as? [String : Any],
+                    let institution = try? Institution.retrieveOrCreate(name: institute["long_name"] as! String,
+                                                                        url: institute["url"] as! String, context: context)
                 {
-                    eventData = Event(id: id, city: city, date: date, institution: institute)
-                } else {
-                    return
+                    institution?.updateWithJSONData(data: institute)
+                    event.institution = institution
                 }
+                
                 /*
                 let callForPapers: [String:Any] = event["callForPapers"] as! [String : Any]
                 print("Chamada de Trabalhos: \(callForPapers["deadline"] ?? "error")")
@@ -80,47 +80,32 @@ class MainViewController: UITabBarController {
                 print("Abertura das Inscrições: \(enrollment["deadline"] ?? "error")")
                 print("Inscrições: \((enrollment["closed"] as? Bool)! ? "fechadas" : "abertas")")
                  */
-                DispatchQueue.main.async { [weak self] in self?.events.append(eventData) }
+                DispatchQueue.main.async { [weak self] in self?.updateUI() }
             } else {
-                print("Failed to load event \(id)")
-                return
+                print("Failed to load event \(evtinfo.id)")
             }
-            
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
             for evt in (loadJSONObject(from: from+file) as? [Any]) ?? [] {
                 if let event = evt as? [String:Any] {
                     //print("Event id: \(event["id"] as! String) updated: \(event["updated"] as! String)")
-                    let eventURL = from + (event["id"] as! String) + ".json"
                     //print ("Loading event from: \(eventURL)")
+                    let eventURL = from + (event["id"] as! String) + ".json"
                     if let eventData = loadJSONObject(from: eventURL) {
-                        process(eventData as? [String:Any], id: event["id"] as! String)
+                        let evtinfo = (id: event["id"] as! String,
+                                       updated: (Date.fromString(event["updated"] as? String)) ?? Date())
+                        process(eventData as? [String:Any], evtinfo: evtinfo)
                     }
                 }
             }
-            DispatchQueue.main.async { [weak self] in self?.updateUI() }
+            DispatchQueue.main.async { [weak self] in
+                try? AppDelegate.persistentContainer?.viewContext.save()
+                self?.updateUI()
+            }
         }
     }
     
-}
-
-extension Foundation.Date {
-    static func fromString(_ date: String?) -> Date? {
-        if let d = date {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy'-'MM'-'dd"
-            let result = formatter.date(from: d)
-            return result
-        }
-        return nil
-    }
-    var inPortuguese: String {
-        let formatter = DateFormatter()
-        formatter.locale = Locale.init(identifier: "pt_BR")
-        formatter.dateFormat = "dd' de 'MMMM' de 'yyyy"
-        return formatter.string(from: self)
-    }
 }
 
 extension UITabBarController {

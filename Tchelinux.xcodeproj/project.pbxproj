@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53298F791F758624009BEF9C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298F781F758624009BEF9C /* Event.swift */; };
+		53298F7F1F75A026009BEF9C /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298F7E1F75A026009BEF9C /* Institution.swift */; };
+		53298F871F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298F861F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift */; };
+		53298F891F75ACB1009BEF9C /* CoreDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298F881F75ACB1009BEF9C /* CoreDataTableViewController.swift */; };
 		535F8B751F748CA20061B55F /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F8B741F748CA20061B55F /* EventDetailViewController.swift */; };
 		536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */; };
 		536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53298F781F758624009BEF9C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Model/Event.swift; sourceTree = "<group>"; };
+		53298F7E1F75A026009BEF9C /* Institution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institution.swift; path = Model/Institution.swift; sourceTree = "<group>"; };
+		53298F861F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableControllerTableViewExtension.swift; sourceTree = "<group>"; };
+		53298F881F75ACB1009BEF9C /* CoreDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewController.swift; sourceTree = "<group>"; };
 		535F8B741F748CA20061B55F /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		536198D91F47A2DD00D2D2B0 /* Tchelinux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tchelinux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53298F771F7585FC009BEF9C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53298F7E1F75A026009BEF9C /* Institution.swift */,
+				53298F781F758624009BEF9C /* Event.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		536198D01F47A2DD00D2D2B0 = {
 			isa = PBXGroup;
 			children = (
@@ -68,7 +85,9 @@
 				535F8B741F748CA20061B55F /* EventDetailViewController.swift */,
 				536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */,
 				53EEC3281F7313FD009F9C88 /* EventTableViewController.swift */,
+				53298F861F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift */,
 				53EEC32A1F731445009F9C88 /* HelperStructs.swift */,
+				53298F771F7585FC009BEF9C /* Model */,
 				536198F11F47A3E800D2D2B0 /* CoreData */,
 				536198F21F47A3FA00D2D2B0 /* Splash */,
 				536198F31F47A44200D2D2B0 /* SupportFiles */,
@@ -80,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */,
+				53298F881F75ACB1009BEF9C /* CoreDataTableViewController.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -176,9 +196,13 @@
 			files = (
 				535F8B751F748CA20061B55F /* EventDetailViewController.swift in Sources */,
 				536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */,
+				53298F871F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift in Sources */,
 				536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */,
 				53EEC3291F7313FD009F9C88 /* EventTableViewController.swift in Sources */,
 				536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */,
+				53298F791F758624009BEF9C /* Event.swift in Sources */,
+				53298F7F1F75A026009BEF9C /* Institution.swift in Sources */,
+				53298F891F75ACB1009BEF9C /* CoreDataTableViewController.swift in Sources */,
 				53EEC32B1F731446009F9C88 /* HelperStructs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
