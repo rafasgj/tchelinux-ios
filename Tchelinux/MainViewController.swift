@@ -12,19 +12,8 @@ import Foundation
 class MainViewController: UITabBarController {
 
     // MARK: Model    
-    var events = [Event]() {
-        didSet {
-            print("Changing EVENT")
-            if let vc = nextVC as? EventTableViewController {
-                print("About to change events on view controller.")
-                vc.events = events
-            } else {
-                print("It's another VC...")
-            }
-        }
-    }
-    
-    // MARK: Startup
+    var events = [Event]()
+    // MARK: Controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +23,17 @@ class MainViewController: UITabBarController {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             self?.load_events(from: base_url, file: list_of_events)
         }
+    }
+
+    private func updateUI() {
+        if let tableVC = (self.selectedViewController as? UINavigationController)?.visibleViewController as? EventTableViewController {
+            tableVC.events = events
+            tableVC.eventList?.reloadData()
+        }
+    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        updateUI()
     }
     
     //MARK: JSON Objects
@@ -80,8 +80,6 @@ class MainViewController: UITabBarController {
                 print("Abertura das Inscrições: \(enrollment["deadline"] ?? "error")")
                 print("Inscrições: \((enrollment["closed"] as? Bool)! ? "fechadas" : "abertas")")
                  */
-                
-                print("Added \(eventData.id)")
                 DispatchQueue.main.async { [weak self] in self?.events.append(eventData) }
             } else {
                 print("Failed to load event \(id)")
@@ -93,16 +91,18 @@ class MainViewController: UITabBarController {
         DispatchQueue.global(qos: .userInitiated).async {
             for evt in (loadJSONObject(from: from+file) as? [Any]) ?? [] {
                 if let event = evt as? [String:Any] {
-                    print("Event id: \(event["id"] as! String) updated: \(event["updated"] as! String)")
+                    //print("Event id: \(event["id"] as! String) updated: \(event["updated"] as! String)")
                     let eventURL = from + (event["id"] as! String) + ".json"
-                    print ("Loading event from: \(eventURL)")
+                    //print ("Loading event from: \(eventURL)")
                     if let eventData = loadJSONObject(from: eventURL) {
                         process(eventData as? [String:Any], id: event["id"] as! String)
                     }
                 }
             }
+            DispatchQueue.main.async { [weak self] in self?.updateUI() }
         }
     }
+    
 }
 
 extension Foundation.Date {
@@ -114,6 +114,12 @@ extension Foundation.Date {
             return result
         }
         return nil
+    }
+    var inPortuguese: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale.init(identifier: "pt_BR")
+        formatter.dateFormat = "dd' de 'MMMM' de 'yyyy"
+        return formatter.string(from: self)
     }
 }
 

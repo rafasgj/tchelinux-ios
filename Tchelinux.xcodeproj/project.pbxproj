@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		535F8B751F748CA20061B55F /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535F8B741F748CA20061B55F /* EventDetailViewController.swift */; };
 		536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */; };
 		536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */; };
 		536198E21F47A2DD00D2D2B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536198E01F47A2DD00D2D2B0 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		535F8B741F748CA20061B55F /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		536198D91F47A2DD00D2D2B0 /* Tchelinux.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tchelinux.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536198DC1F47A2DD00D2D2B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -62,10 +64,14 @@
 		536198DB1F47A2DD00D2D2B0 /* Tchelinux */ = {
 			isa = PBXGroup;
 			children = (
-				536198F41F47B24300D2D2B0 /* Main */,
-				536198F31F47A44200D2D2B0 /* SupportFiles */,
-				536198F21F47A3FA00D2D2B0 /* Splash */,
+				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
+				535F8B741F748CA20061B55F /* EventDetailViewController.swift */,
+				536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */,
+				53EEC3281F7313FD009F9C88 /* EventTableViewController.swift */,
+				53EEC32A1F731445009F9C88 /* HelperStructs.swift */,
 				536198F11F47A3E800D2D2B0 /* CoreData */,
+				536198F21F47A3FA00D2D2B0 /* Splash */,
+				536198F31F47A44200D2D2B0 /* SupportFiles */,
 			);
 			path = Tchelinux;
 			sourceTree = "<group>";
@@ -94,17 +100,6 @@
 				536198EB1F47A2DD00D2D2B0 /* Info.plist */,
 			);
 			name = SupportFiles;
-			sourceTree = "<group>";
-		};
-		536198F41F47B24300D2D2B0 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
-				536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */,
-				53EEC3281F7313FD009F9C88 /* EventTableViewController.swift */,
-				53EEC32A1F731445009F9C88 /* HelperStructs.swift */,
-			);
-			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535F8B751F748CA20061B55F /* EventDetailViewController.swift in Sources */,
 				536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */,
 				536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */,
 				53EEC3291F7313FD009F9C88 /* EventTableViewController.swift in Sources */,
@@ -214,6 +210,7 @@
 		536198EC1F47A2DD00D2D2B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -265,6 +262,7 @@
 		536198ED1F47A2DD00D2D2B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;

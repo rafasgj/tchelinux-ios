@@ -99,17 +99,17 @@
         <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="support" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-479" positionY="-58" width="128" height="28"/>
-        <element name="Institution" positionX="-63" positionY="-130" width="128" height="28"/>
-        <element name="Room" positionX="-164" positionY="230" width="128" height="28"/>
-        <element name="Enrollment" positionX="-495" positionY="-277" width="128" height="28"/>
-        <element name="CallForPapers" positionX="-794" positionY="-198" width="128" height="28"/>
-        <element name="Sponsor" positionX="-738" positionY="179" width="128" height="28"/>
-        <element name="Support" positionX="-452" positionY="371" width="128" height="28"/>
-        <element name="Contact" positionX="-666" positionY="392" width="128" height="28"/>
-        <element name="Lecture" positionX="63" positionY="200" width="128" height="28"/>
-        <element name="Author" positionX="133" positionY="-36" width="128" height="28"/>
-        <element name="EndingPanel" positionX="-99" positionY="-265" width="128" height="28"/>
-        <element name="Result" positionX="-776" positionY="65" width="128" height="28"/>
+        <element name="Author" positionX="133" positionY="-36" width="128" height="133"/>
+        <element name="CallForPapers" positionX="-794" positionY="-198" width="128" height="103"/>
+        <element name="Contact" positionX="-666" positionY="392" width="128" height="103"/>
+        <element name="EndingPanel" positionX="-99" positionY="-265" width="128" height="103"/>
+        <element name="Enrollment" positionX="-495" positionY="-277" width="128" height="133"/>
+        <element name="Event" positionX="-479" positionY="-58" width="128" height="313"/>
+        <element name="Institution" positionX="-63" positionY="-130" width="128" height="148"/>
+        <element name="Lecture" positionX="63" positionY="200" width="128" height="133"/>
+        <element name="Result" positionX="-776" positionY="65" width="128" height="88"/>
+        <element name="Room" positionX="-164" positionY="230" width="128" height="103"/>
+        <element name="Sponsor" positionX="-738" positionY="179" width="128" height="133"/>
+        <element name="Support" positionX="-452" positionY="371" width="128" height="133"/>
     </elements>
 </model>

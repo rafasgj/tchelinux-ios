@@ -1,53 +1,21 @@
 //
-//  EventTableViewController.swift
+//  EventDetailViewController.swift
 //  Tchelinux
 //
-//  Created by Rafael Jeffman on 20/09/17.
+//  Created by Rafael Jeffman on 21/09/17.
 //  Copyright © 2017 Rafael Jeffman. All rights reserved.
 //
 
 import UIKit
 
-class EventTableViewController: UITableViewController {
+class EventDetailViewController: UITableViewController {
+    
+    var event: Event? {
+        didSet { updateUI() }
+    }
 
-    var events: [Event]?
-    {
-        didSet { eventList?.reloadData() }
-    }
-    
-    var filter: (Event) -> Bool = { e in return true }
-    {
-        didSet { eventList?.reloadData() }
-    }
-    
-    var order: (Event,Event) -> Bool = { a,b in return true }
-    {
-        didSet { eventList?.reloadData() }
-    }
-    
-    private var orderedList: [Event]? {
-        return events?.filter(filter).sorted(by:order)
-    }
-    
-    @IBOutlet var eventList: UITableView!
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    private func updateUI() {
         
-        print("Will apear \((self.navigationItem.title ?? "WHO KNOWS?"))")
-        
-        if let title = self.navigationItem.title {
-            switch title {
-            case "Agenda":
-                filter = { $0.date >= Date() }
-                order = {$0.date < $1.date }
-            case "Resultados":
-                filter = { $0.date < Date() }
-                order = {$0.date > $1.date }
-            default: break
-            }
-        }
     }
     
     // MARK: - Table view data source
@@ -57,17 +25,33 @@ class EventTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events?.filter(filter).count ?? 0
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath)
         
-        if let list = orderedList {
-            let event = list[indexPath.row]
-            cell.textLabel?.text = event.city
-            cell.detailTextLabel?.text = event.date.inPortuguese
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = "Cidade"
+            cell.detailTextLabel?.text = event?.city
+        case 1:
+            cell.textLabel?.text = "Data"
+            cell.detailTextLabel?.text = event?.date.inPortuguese
+        case 2:
+            cell.textLabel?.text = "Nome"
+            if let institution = event?.institution {
+                cell.detailTextLabel?.text = institution.name
+            }
+        case 3:
+            cell.textLabel?.text = "Endereço"
+            if let institution = event?.institution {
+                cell.detailTextLabel?.text = institution.address
+            }
+        default: break
         }
+
         return cell
     }
 
@@ -106,21 +90,14 @@ class EventTableViewController: UITableViewController {
     }
     */
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let list = orderedList, let vc = segue.destination as? EventDetailViewController,
-            let e = eventList?.indexPathForSelectedRow?.row
-        {
-            print("The list:")
-            for item in list {
-                print(item.city)
-            }
-            print("The index: \(e)")
-            print("Segue with \(list[e].city)")
-            vc.event = list[e]
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }
