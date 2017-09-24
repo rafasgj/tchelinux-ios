@@ -93,9 +93,10 @@ class MainViewController: UITabBarController {
                     //print ("Loading event from: \(eventURL)")
                     let eventURL = from + (event["id"] as! String) + ".json"
                     if let eventData = loadJSONObject(from: eventURL) {
-                        let evtinfo = (id: event["id"] as! String,
-                                       updated: (Date.fromString(event["updated"] as? String)) ?? Date())
-                        process(eventData as? [String:Any], evtinfo: evtinfo)
+                        if let eventUpdated = event["updated"] as? String {
+                            let evtinfo = (id: event["id"] as! String, updated: (Date.fromString(eventUpdated+"T23:59:59") ?? Date()))
+                            process(eventData as? [String:Any], evtinfo: evtinfo)
+                        }
                     }
                 }
             }

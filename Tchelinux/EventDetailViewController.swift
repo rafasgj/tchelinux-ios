@@ -20,43 +20,49 @@ class EventDetailViewController: UITableViewController {
     
     // MARK: - Table view data source
 
+    private let sections = ["","Intituição"]
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        return sections[section]
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        // go away! change the number of sections!
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
-
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
-            cell.textLabel?.text = "Cidade"
-            cell.detailTextLabel?.text = event?.city
+            let cell = tableView.dequeueReusableCell(withIdentifier: "heading", for: indexPath) as! EventHeadingCell
+            if let evt = event {
+                cell.cityLabel?.text = evt.city
+                cell.dateLabel?.text = (evt.date! as Date).inPortuguese
+            }
+            return cell
         case 1:
-            cell.textLabel?.text = "Data"
-            if let e = event {
-                cell.detailTextLabel?.text = (e.date! as Date).inPortuguese
-            } else {
-                cell.detailTextLabel?.text = ""
+            let cell = tableView.dequeueReusableCell(withIdentifier: "institution", for: indexPath) as! EventInstitutionCell
+            if let evt = event {
+                cell.instituteLabel?.text = evt.institution?.name
+                cell.addressLabel?.text = evt.institution?.address
+                if let site = evt.institution?.url {
+                    cell.url = URL(string: site)
+                }
             }
-        case 2:
-            cell.textLabel?.text = "Nome"
-            if let institution = event?.institution {
-                cell.detailTextLabel?.text = institution.name
-            }
-        case 3:
-            cell.textLabel?.text = "Endereço"
-            if let institution = event?.institution {
-                cell.detailTextLabel?.text = institution.address
-            }
-        default: break
-        }
+            return cell
 
-        return cell
+        default:
+            // we should never get here...
+            let cell = tableView.dequeueReusableCell(withIdentifier: "heading", for: indexPath) as! EventHeadingCell
+            cell.cityLabel?.text = ""
+            cell.dateLabel?.text = ""
+            return cell
+        }
     }
 
 }

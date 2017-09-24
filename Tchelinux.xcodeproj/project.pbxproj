@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53147E551F773999009EF0A9 /* EventHeadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53147E541F773999009EF0A9 /* EventHeadingCell.swift */; };
+		53147E571F774CD9009EF0A9 /* EventInstitutionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53147E561F774CD9009EF0A9 /* EventInstitutionCell.swift */; };
 		53298F791F758624009BEF9C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298F781F758624009BEF9C /* Event.swift */; };
 		53298F7F1F75A026009BEF9C /* Institution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298F7E1F75A026009BEF9C /* Institution.swift */; };
 		53298F871F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53298F861F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53147E541F773999009EF0A9 /* EventHeadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventHeadingCell.swift; sourceTree = "<group>"; };
+		53147E561F774CD9009EF0A9 /* EventInstitutionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInstitutionCell.swift; sourceTree = "<group>"; };
 		53298F781F758624009BEF9C /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Event.swift; path = Model/Event.swift; sourceTree = "<group>"; };
 		53298F7E1F75A026009BEF9C /* Institution.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Institution.swift; path = Model/Institution.swift; sourceTree = "<group>"; };
 		53298F861F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableControllerTableViewExtension.swift; sourceTree = "<group>"; };
@@ -53,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53147E581F774DBA009EF0A9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				53147E541F773999009EF0A9 /* EventHeadingCell.swift */,
+				53147E561F774CD9009EF0A9 /* EventInstitutionCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		53298F771F7585FC009BEF9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				536198E01F47A2DD00D2D2B0 /* Main.storyboard */,
+				53147E581F774DBA009EF0A9 /* Cells */,
 				535F8B741F748CA20061B55F /* EventDetailViewController.swift */,
 				536198DE1F47A2DD00D2D2B0 /* MainViewController.swift */,
 				53EEC3281F7313FD009F9C88 /* EventTableViewController.swift */,
@@ -199,9 +213,11 @@
 				53298F871F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift in Sources */,
 				536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */,
 				53EEC3291F7313FD009F9C88 /* EventTableViewController.swift in Sources */,
+				53147E571F774CD9009EF0A9 /* EventInstitutionCell.swift in Sources */,
 				536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */,
 				53298F791F758624009BEF9C /* Event.swift in Sources */,
 				53298F7F1F75A026009BEF9C /* Institution.swift in Sources */,
+				53147E551F773999009EF0A9 /* EventHeadingCell.swift in Sources */,
 				53298F891F75ACB1009BEF9C /* CoreDataTableViewController.swift in Sources */,
 				53EEC32B1F731446009F9C88 /* HelperStructs.swift in Sources */,
 			);

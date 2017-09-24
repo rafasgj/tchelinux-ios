@@ -26,7 +26,7 @@ extension Foundation.Date {
     static func fromString(_ date: String?) -> Date? {
         if let d = date {
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy'-'MM'-'dd"
+            formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
             let result = formatter.date(from: d)
             return result
         }
