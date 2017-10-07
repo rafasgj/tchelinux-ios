@@ -45,7 +45,11 @@ extension Foundation.Date {
 
 extension NSMutableAttributedString {
     @discardableResult func bold(_ text:String) -> NSMutableAttributedString {
+        #if swift(>=4.0)
         let attrs:[NSAttributedStringKey:AnyObject] = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)]
+        #else
+        let attrs:[String:AnyObject] = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 17)]
+        #endif
         let boldString = NSMutableAttributedString(string:"\(text)", attributes:attrs)
         self.append(boldString)
         return self
