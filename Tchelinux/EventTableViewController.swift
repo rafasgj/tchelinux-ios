@@ -13,6 +13,8 @@ class EventTableViewController: CoreDataTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     internal var fetchedResultsController: NSFetchedResultsController<Event>? {
@@ -31,12 +33,8 @@ class EventTableViewController: CoreDataTableViewController {
     
     @IBOutlet var eventList: UITableView!
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        //print("Will apear \((self.navigationItem.title ?? "WHO KNOWS?"))")
-        
         requestFetchedResultsController()
     }
     
@@ -69,6 +67,7 @@ class EventTableViewController: CoreDataTableViewController {
             cell.textLabel?.text = event.city
             cell.detailTextLabel?.text = (event.date! as Date).inPortuguese
         }
+        
         return cell
     }
 

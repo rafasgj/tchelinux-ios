@@ -19,13 +19,19 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let base_url = "https://tchelinux.org/json/"
-        let list_of_events = "eventos.json"
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            self?.load_events(from: base_url, file: list_of_events)
+        let base_json = "https://tchelinux.org/json/eventos.json"
+        if let context = AppDelegate.persistentContainer?.viewContext {
+            DispatchQueue.global(qos: .userInitiated).async { [weak self, weak context] in
+                if context != nil
+                { self?.load_events(from: base_json, context: context!) }
+            }
         }
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        updateUI()
+    }
+    
     private func updateUI() {
         if let tableVC = nextVC as? EventTableViewController {
             tableVC.eventList?.reloadData()
@@ -38,7 +44,7 @@ class MainViewController: UITabBarController {
     
     //MARK: JSON Objects
     
-    private func load_events(from: String, file: String) {
+    private func load_events(from: String, context: NSManagedObjectContext) {
         
         func loadJSONObject(from:String) -> Any?
         {
@@ -49,18 +55,10 @@ class MainViewController: UITabBarController {
             return nil
         }
         
-        func process(_ evt: [String:Any]?, evtinfo: (id:String, updated:Date)) {
+        func process(_ evt: [String:Any]?, evtinfo: (id:String, updated:Date), context: NSManagedObjectContext) {
             if let eventData = evt,
-                let context = AppDelegate.persistentContainer?.viewContext,
-                let eventManagedObject = try? Event.retrieveOrCreate(event: evtinfo.id, context: context),
-                let event = eventManagedObject
+                let event = (try? Event.retrieveOrCreate(event: evtinfo.id, context: context)) ?? nil
             {
-                if let date: NSDate = event.lastUpdate, date <= (evtinfo.updated as NSDate) {
-                    //print("Ignoring event \(evtinfo.id) since it exists and was not updated since \(evtinfo.updated)")
-                    return
-                }
-                //print("Creating/changing \(evtinfo.id)")
-
                 event.updateWithJSONData(data:eventData, updated: evtinfo.updated)
 
                 if let institute: [String:Any] = eventData["institution"] as? [String : Any],
@@ -70,38 +68,55 @@ class MainViewController: UITabBarController {
                     institution?.updateWithJSONData(data: institute)
                     event.institution = institution
                 }
-                
-                /*
-                let callForPapers: [String:Any] = event["callForPapers"] as! [String : Any]
-                print("Chamada de Trabalhos: \(callForPapers["deadline"] ?? "error")")
-                print("Notificação: \(callForPapers["notificação"] ?? "error")")
-                
-                let enrollment: [String:Any] = event["enrollment"] as! [String : Any]
-                print("Abertura das Inscrições: \(enrollment["deadline"] ?? "error")")
-                print("Inscrições: \((enrollment["closed"] as? Bool)! ? "fechadas" : "abertas")")
-                 */
+                if let call4Papers: [String:Any] = eventData["callForPapers"] as? [String : Any]
+                {
+                    if event.callForPapers == nil {
+                        event.callForPapers = CallForPapers(context: context)
+                    }
+                    event.callForPapers?.updateWithJSONData(data: call4Papers)
+                }
+
+                if let enrollment: [String:Any] = eventData["enrollment"] as? [String : Any] {
+                    if event.enrollment == nil {
+                        event.enrollment = Enrollment(context: context)
+                    }
+                    event.enrollment?.updateWithJSONData(data: enrollment)
+                }
                 DispatchQueue.main.async { [weak self] in self?.updateUI() }
             } else {
-                print("Failed to load event \(evtinfo.id)")
+                print("Failed to parse event.")
             }
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            for evt in (loadJSONObject(from: from+file) as? [Any]) ?? [] {
-                if let event = evt as? [String:Any] {
-                    //print("Event id: \(event["id"] as! String) updated: \(event["updated"] as! String)")
-                    //print ("Loading event from: \(eventURL)")
-                    let eventURL = from + (event["id"] as! String) + ".json"
-                    if let eventData = loadJSONObject(from: eventURL) {
-                        if let eventUpdated = event["updated"] as? String {
-                            let evtinfo = (id: event["id"] as! String, updated: (Date.fromString(eventUpdated+"T23:59:59") ?? Date()))
-                            process(eventData as? [String:Any], evtinfo: evtinfo)
+            for evt in (loadJSONObject(from: from) as? [Any]) ?? [] {
+                DispatchQueue.global(qos: .userInitiated).async { [weak context] in
+                    if let event = evt as? [String:Any]
+                    {
+                        let codename = event["id"] as! String
+                        let updated = (event["updated"] as! String)
+                        let evtinfo = (id: codename, updated: (Date.fromString(updated) ?? Date()))
+                        let jsonFile = "https://\(codename).tchelinux.org/data/\(codename).json"
+                        print("Event id: \(codename) updated: \(updated)")
+
+                        if let c = context, Event.needsUpdate(evtinfo, context: c) {
+                            print ("Loading event from: \(jsonFile)")
+                            if let eventData = loadJSONObject(from: jsonFile) as? [String:Any] {
+                                print ("Processing: \(eventData["id"] as! String)")
+                                process(eventData, evtinfo: evtinfo, context: c)
+                            }
                         }
                     }
                 }
             }
-            DispatchQueue.main.async { [weak self] in
-                try? AppDelegate.persistentContainer?.viewContext.save()
+            DispatchQueue.main.async { [weak self, weak context] in
+                if let c = context {
+                    do {
+                        try c.save()
+                    } catch {
+                        print("Failed: \(error)")
+                    }
+                }
                 self?.updateUI()
             }
         }

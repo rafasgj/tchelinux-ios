@@ -20,6 +20,9 @@
 		536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 536198E31F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld */; };
 		536198E71F47A2DD00D2D2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 536198E61F47A2DD00D2D2B0 /* Assets.xcassets */; };
 		536198EA1F47A2DD00D2D2B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 536198E81F47A2DD00D2D2B0 /* LaunchScreen.storyboard */; };
+		537785D21F787E5C008BC0B7 /* CallForPapers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537785D11F787E5C008BC0B7 /* CallForPapers.swift */; };
+		537785D41F788167008BC0B7 /* Enrollment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537785D31F788167008BC0B7 /* Enrollment.swift */; };
+		537785D61F795D46008BC0B7 /* EventEnrollmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537785D51F795D46008BC0B7 /* EventEnrollmentCell.swift */; };
 		53EEC3291F7313FD009F9C88 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEC3281F7313FD009F9C88 /* EventTableViewController.swift */; };
 		53EEC32B1F731446009F9C88 /* HelperStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEC32A1F731445009F9C88 /* HelperStructs.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +43,9 @@
 		536198E61F47A2DD00D2D2B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		536198E91F47A2DD00D2D2B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		536198EB1F47A2DD00D2D2B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		537785D11F787E5C008BC0B7 /* CallForPapers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CallForPapers.swift; path = Model/CallForPapers.swift; sourceTree = "<group>"; };
+		537785D31F788167008BC0B7 /* Enrollment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enrollment.swift; sourceTree = "<group>"; };
+		537785D51F795D46008BC0B7 /* EventEnrollmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventEnrollmentCell.swift; sourceTree = "<group>"; };
 		53EEC3281F7313FD009F9C88 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		53EEC32A1F731445009F9C88 /* HelperStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperStructs.swift; sourceTree = "<group>"; };
 		53EEC32E1F7325F7009F9C88 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -60,6 +66,7 @@
 		53147E581F774DBA009EF0A9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				537785D51F795D46008BC0B7 /* EventEnrollmentCell.swift */,
 				53147E541F773999009EF0A9 /* EventHeadingCell.swift */,
 				53147E561F774CD9009EF0A9 /* EventInstitutionCell.swift */,
 			);
@@ -71,6 +78,8 @@
 			children = (
 				53298F7E1F75A026009BEF9C /* Institution.swift */,
 				53298F781F758624009BEF9C /* Event.swift */,
+				537785D11F787E5C008BC0B7 /* CallForPapers.swift */,
+				537785D31F788167008BC0B7 /* Enrollment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -163,12 +172,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Rafael Jeffman";
 				TargetAttributes = {
 					536198D81F47A2DD00D2D2B0 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 67PX7SHSDS;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -209,12 +219,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				535F8B751F748CA20061B55F /* EventDetailViewController.swift in Sources */,
+				537785D61F795D46008BC0B7 /* EventEnrollmentCell.swift in Sources */,
 				536198DF1F47A2DD00D2D2B0 /* MainViewController.swift in Sources */,
 				53298F871F75AC3A009BEF9C /* EventTableControllerTableViewExtension.swift in Sources */,
+				537785D41F788167008BC0B7 /* Enrollment.swift in Sources */,
 				536198DD1F47A2DD00D2D2B0 /* AppDelegate.swift in Sources */,
 				53EEC3291F7313FD009F9C88 /* EventTableViewController.swift in Sources */,
 				53147E571F774CD9009EF0A9 /* EventInstitutionCell.swift in Sources */,
 				536198E51F47A2DD00D2D2B0 /* Tchelinux.xcdatamodeld in Sources */,
+				537785D21F787E5C008BC0B7 /* CallForPapers.swift in Sources */,
 				53298F791F758624009BEF9C /* Event.swift in Sources */,
 				53298F7F1F75A026009BEF9C /* Institution.swift in Sources */,
 				53147E551F773999009EF0A9 /* EventHeadingCell.swift in Sources */,
@@ -259,7 +272,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -267,7 +282,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -311,7 +330,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -319,7 +340,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -353,7 +378,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafaeljeffman.tchelinux.Tchelinux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -366,7 +392,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafaeljeffman.tchelinux.Tchelinux;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

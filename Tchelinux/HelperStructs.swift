@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: Allow NSDate to be comparable as with Date
 
@@ -27,7 +28,7 @@ extension Foundation.Date {
         if let d = date {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
-            let result = formatter.date(from: d)
+            let result = formatter.date(from: d+"T23:59:59")
             return result
         }
         return nil
@@ -37,5 +38,22 @@ extension Foundation.Date {
         formatter.locale = Locale.init(identifier: "pt_BR")
         formatter.dateFormat = "dd' de 'MMMM' de 'yyyy"
         return formatter.string(from: self)
+    }
+}
+
+// MARK: Ease string formating.
+
+extension NSMutableAttributedString {
+    @discardableResult func bold(_ text:String) -> NSMutableAttributedString {
+        let attrs:[NSAttributedStringKey:AnyObject] = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17)]
+        let boldString = NSMutableAttributedString(string:"\(text)", attributes:attrs)
+        self.append(boldString)
+        return self
+    }
+    
+    @discardableResult func normal(_ text:String)->NSMutableAttributedString {
+        let normal = NSAttributedString(string: text)
+        self.append(normal)
+        return self
     }
 }

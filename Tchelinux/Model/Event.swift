@@ -15,6 +15,24 @@ enum DatabaseError : Error {
 }
 
 class Event: NSManagedObject {
+    
+    static func needsUpdate(_ evtinfo:(id:String,updated:Date), context: NSManagedObjectContext) -> Bool
+    {
+        // Note that Swift CANNOT infer the type correctly!
+        let request: NSFetchRequest<Event> = Event.fetchRequest()
+        request.predicate = NSPredicate(format: "codename == %@", evtinfo.id)
+        
+        if let result = try? context.fetch(request) {
+            if result.count > 0 {
+                if let upd = result.first?.lastUpdate {
+                    return upd <= (evtinfo.updated as NSDate)
+                }
+            }
+        }
+    
+        return true
+    }
+    
     static func retrieveOrCreate(event codename:String, context: NSManagedObjectContext) throws -> Event?
     {
         // Note that Swift CANNOT infer the type correctly!
@@ -37,7 +55,7 @@ class Event: NSManagedObject {
     }
 
     func updateWithJSONData(data: [String:Any], updated: Date) {
-        self.lastUpdate = updated as NSDate
+        self.lastUpdate = Date() as NSDate
         self.city = data["city"] as? String ?? ""
         self.date = Date.fromString(data["date"] as? String) as NSDate?
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class EventDetailViewController: UITableViewController {
-    
+
     var event: Event? {
         didSet { updateUI() }
     }
@@ -17,21 +17,45 @@ class EventDetailViewController: UITableViewController {
     private func updateUI() {
         
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
     
     // MARK: - Table view data source
 
-    private let sections = ["","Intituição"]
+    private let sections = ["","Intituição","@enrollment"]
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return sections[section]
+        var title = sections[section]
+        if title == "@enrollment" {
+            title = "Chamada de Trabalhos"
+            if let callForPapers = event?.callForPapers,
+                let date = callForPapers.deadline, date < (Date() as NSDate)
+            {
+                title = "Inscrições"
+            }
+            if let date = event?.date, date < (Date() as NSDate)
+            {
+                title = "Certificados"
+            }
+        }
+        return title
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        // go away! change the sections title list!
+        return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // go away! change the number of sections!
+        // go away! 
         return 1
     }
 
@@ -49,13 +73,52 @@ class EventDetailViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "institution", for: indexPath) as! EventInstitutionCell
             if let evt = event {
                 cell.instituteLabel?.text = evt.institution?.name
-                cell.addressLabel?.text = evt.institution?.address
+                cell.addressLabel?.text = (evt.institution?.address ?? " ").replacingOccurrences(of: "<br/>", with: "\n")
                 if let site = evt.institution?.url {
                     cell.url = URL(string: site)
                 }
             }
             return cell
-
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "enrollment", for: indexPath) as! EventEnrollmentCell
+            if let evt = event {
+                let today = Date()
+                let text: NSMutableAttributedString = NSMutableAttributedString()
+                var url = "http://\(evt.codename ?? "www").tchelinux.org"
+                
+                if let cfp = evt.callForPapers?.deadline,
+                    today <= (cfp as Date)
+                {
+                    text.normal("A ").bold("Chamada de Trabalhos")
+                        .normal(" está aberta, e disponível até o dia ")
+                        .bold("\((cfp as Date).inPortuguese)")
+                    url = evt.callForPapers?.url ?? url
+                    cell.webButton?.setTitle("Envie sua Proposta" , for: .normal)
+                }
+                else if let enroll = evt.enrollment?.deadline,
+                        today <= (enroll as Date)
+                {
+                    text.normal("As inscrições para o evento estão abertas, e disponíveis até o dia ")
+                        .bold("\((enroll as Date).inPortuguese)")
+                    url = evt.enrollment?.url ?? url
+                    cell.webButton?.setTitle("Faça sua Inscrição" , for: .normal)
+                }
+                else if let saturday = evt.date {
+                    if (saturday as Date) == today {
+                        text.normal("O evento está ocorrendo hoje! Inscreva-se no local!")
+                    } else if (saturday as Date) < today {
+                        text.normal("Os certificados são normalmente disponilizados ")
+                            .bold("15 dias")
+                            .normal(" após o evento.")
+                        url = "http://certificados.tchelinux.org"
+                        cell.webButton?.setTitle("Acesse seu Certificado" , for: .normal)
+                    }
+                }
+                
+                cell.enrollmentLabel?.attributedText = text
+                cell.url = URL(string: url)
+            }
+            return cell
         default:
             // we should never get here...
             let cell = tableView.dequeueReusableCell(withIdentifier: "heading", for: indexPath) as! EventHeadingCell
@@ -63,6 +126,14 @@ class EventDetailViewController: UITableViewController {
             cell.dateLabel?.text = ""
             return cell
         }
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
 }

@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CallForPapers" representedClassName=".CallForPapers" syncable="YES" codeGenerationType="category">
+        <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="evento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="callForPapers" inverseEntity="Event" syncable="YES"/>
+    </entity>
+    <entity name="Enrollment" representedClassName=".Enrollment" syncable="YES" codeGenerationType="category">
+        <attribute name="availability" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="closed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="deadline" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="start" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="evento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="enrollment" inverseEntity="Event" syncable="YES"/>
+    </entity>
     <entity name="Event" representedClassName=".Event" syncable="YES" codeGenerationType="category">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="codename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="callForPapers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CallForPapers" inverseName="evento" inverseEntity="CallForPapers" syncable="YES"/>
+        <relationship name="enrollment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Enrollment" inverseName="evento" inverseEntity="Enrollment" syncable="YES"/>
         <relationship name="institution" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institution" inverseName="event" inverseEntity="Institution" syncable="YES"/>
     </entity>
     <entity name="Institution" representedClassName=".Institution" syncable="YES" codeGenerationType="category">
@@ -17,7 +33,9 @@
         <relationship name="event" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Event" inverseName="institution" inverseEntity="Event" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-389" positionY="-58" width="128" height="118"/>
-        <element name="Institution" positionX="-81" positionY="-54" width="128" height="150"/>
+        <element name="Event" positionX="-389" positionY="-58" width="128" height="148"/>
+        <element name="Institution" positionX="-135" positionY="-78" width="128" height="150"/>
+        <element name="CallForPapers" positionX="-585" positionY="-58" width="128" height="103"/>
+        <element name="Enrollment" positionX="-585" positionY="101" width="128" height="133"/>
     </elements>
 </model>
