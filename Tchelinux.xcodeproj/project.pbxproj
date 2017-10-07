@@ -25,6 +25,7 @@
 		537785D61F795D46008BC0B7 /* EventEnrollmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537785D51F795D46008BC0B7 /* EventEnrollmentCell.swift */; };
 		53EEC3291F7313FD009F9C88 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEC3281F7313FD009F9C88 /* EventTableViewController.swift */; };
 		53EEC32B1F731446009F9C88 /* HelperStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EEC32A1F731445009F9C88 /* HelperStructs.swift */; };
+		A34973541F894C880041668C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34973531F894C880041668C /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		53EEC32A1F731445009F9C88 /* HelperStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperStructs.swift; sourceTree = "<group>"; };
 		53EEC32E1F7325F7009F9C88 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		53EEC32F1F7325F7009F9C88 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A34973531F894C880041668C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A34973541F894C880041668C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 			children = (
 				536198DB1F47A2DD00D2D2B0 /* Tchelinux */,
 				536198DA1F47A2DD00D2D2B0 /* Products */,
+				A34973521F894C880041668C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,6 +149,14 @@
 			name = SupportFiles;
 			sourceTree = "<group>";
 		};
+		A34973521F894C880041668C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A34973531F894C880041668C /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +192,11 @@
 						DevelopmentTeam = 67PX7SHSDS;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

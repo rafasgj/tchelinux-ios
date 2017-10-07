@@ -10,6 +10,7 @@ import UIKit
 
 class EventHeadingCell: UITableViewCell {
 
+    @IBOutlet weak var institutionLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
